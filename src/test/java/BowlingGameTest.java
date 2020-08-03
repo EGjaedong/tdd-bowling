@@ -74,4 +74,14 @@ public class BowlingGameTest {
         int expect = 79;
         assertEquals(expect, result);
     }
+
+    @Test
+    void should_right_when_all_condition_in_middle_and_spare_at_10th() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfDown = {1, 2, 10, 6, 9, 3, 2, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 7, 4, 5};
+
+        int result = bowlingGame.countSource(numberOfDown);
+        int expect = 87;
+        assertEquals(expect, result);
+    }
 }
