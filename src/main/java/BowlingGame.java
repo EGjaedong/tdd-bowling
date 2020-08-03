@@ -20,9 +20,7 @@ public class BowlingGame {
                 i+=2;
                 round++;
             }
-
         }
-
         return source;
     }
 }
