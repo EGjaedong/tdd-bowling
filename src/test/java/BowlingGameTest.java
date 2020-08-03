@@ -26,12 +26,22 @@ public class BowlingGameTest {
     }
 
     @Test
-    void should_return_right_sum_source_when_have_spare_but_no_strike_and_10th_no_strike_and_no_spare() {
+    void should_right_when_have_spare_but_no_strike_and_10th_no_strike_and_no_spare() {
         BowlingGame bowlingGame = new BowlingGame();
-        int[] numberOfDown = {1, 2, 5, 5, 1, 2, 3, 2, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 2, 1};
+        int[] numberOfDown = {1, 2, 5, 6, 1, 2, 3, 2, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 2, 1};
 
         int result = bowlingGame.countSource(numberOfDown);
         int expect = 51;
+        assertEquals(expect, result);
+    }
+
+    @Test
+    void should_right_when_have_spare_and_10th_have_spare_but_no_strike() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfDown = {1, 2, 5, 5, 1, 2, 3, 2, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 7, 7, 1};
+
+        int result = bowlingGame.countSource(numberOfDown);
+        int expect = 59;
         assertEquals(expect, result);
     }
 }
